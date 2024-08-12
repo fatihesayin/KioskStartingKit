@@ -1,0 +1,5 @@
+/Users/fatihsayin/iCloud Drive (Archive)/Documents/kiosk-starting-pack/KioskStartingKit/bin/Release/net9.0/win-x64/publish/KioskStartingKit.exe
+/Users/fatihsayin/iCloud Drive (Archive)/Documents/kiosk-starting-pack/KioskStartingKit/bin/Release/net9.0/win-x64/publish/KioskStartingKit.dll
+/Users/fatihsayin/iCloud Drive (Archive)/Documents/kiosk-starting-pack/KioskStartingKit/bin/Release/net9.0/win-x64/publish/KioskStartingKit.deps.json
+/Users/fatihsayin/iCloud Drive (Archive)/Documents/kiosk-starting-pack/KioskStartingKit/bin/Release/net9.0/win-x64/publish/KioskStartingKit.runtimeconfig.json
+/Users/fatihsayin/iCloud Drive (Archive)/Documents/kiosk-starting-pack/KioskStartingKit/bin/Release/net9.0/win-x64/publish/KioskStartingKit.pdb

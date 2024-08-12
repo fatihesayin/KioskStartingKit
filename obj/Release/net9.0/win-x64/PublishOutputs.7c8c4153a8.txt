@@ -1,2 +1,0 @@
-/Users/fatihsayin/Documents/kiosk-starting-pack/KioskStartingKit/bin/Release/net9.0/win-x64/publish/KioskStartingKit.pdb
-/Users/fatihsayin/Documents/kiosk-starting-pack/KioskStartingKit/bin/Release/net9.0/win-x64/publish/KioskStartingKit.exe

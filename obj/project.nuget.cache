@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "hzltHi6jGgI=",
+  "dgSpecHash": "l7Y0XOuBizk=",
   "success": true,
   "projectFilePath": "/Users/fatihsayin/iCloud Drive (Archive)/Documents/kiosk-starting-pack/KioskStartingKit/KioskStartingKit.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/fatihsayin/.nuget/packages/microsoft.netcore.app.host.win-x64/9.0.0-preview.4.24266.19/microsoft.netcore.app.host.win-x64.9.0.0-preview.4.24266.19.nupkg.sha512"
+  ],
   "logs": []
 }
