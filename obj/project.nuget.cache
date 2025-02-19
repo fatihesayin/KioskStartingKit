@@ -1,10 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "l7Y0XOuBizk=",
+  "dgSpecHash": "opX76/5iGEU=",
   "success": true,
   "projectFilePath": "/Users/fatihsayin/iCloud Drive (Archive)/Documents/kiosk-starting-pack/KioskStartingKit/KioskStartingKit.csproj",
   "expectedPackageFiles": [
-    "/Users/fatihsayin/.nuget/packages/microsoft.netcore.app.host.win-x64/9.0.0-preview.4.24266.19/microsoft.netcore.app.host.win-x64.9.0.0-preview.4.24266.19.nupkg.sha512"
+    "/Users/fatihsayin/.nuget/packages/microsoft.net.illink.tasks/8.0.11/microsoft.net.illink.tasks.8.0.11.nupkg.sha512",
+    "/Users/fatihsayin/.nuget/packages/microsoft.netcore.app.ref/8.0.11/microsoft.netcore.app.ref.8.0.11.nupkg.sha512",
+    "/Users/fatihsayin/.nuget/packages/microsoft.netcore.app.runtime.win-x64/8.0.11/microsoft.netcore.app.runtime.win-x64.8.0.11.nupkg.sha512",
+    "/Users/fatihsayin/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.11/microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512",
+    "/Users/fatihsayin/.nuget/packages/microsoft.aspnetcore.app.runtime.win-x64/8.0.11/microsoft.aspnetcore.app.runtime.win-x64.8.0.11.nupkg.sha512",
+    "/Users/fatihsayin/.nuget/packages/microsoft.netcore.app.crossgen2.osx-arm64/8.0.11/microsoft.netcore.app.crossgen2.osx-arm64.8.0.11.nupkg.sha512",
+    "/Users/fatihsayin/.nuget/packages/microsoft.netcore.app.host.win-x64/8.0.11/microsoft.netcore.app.host.win-x64.8.0.11.nupkg.sha512"
   ],
   "logs": []
 }

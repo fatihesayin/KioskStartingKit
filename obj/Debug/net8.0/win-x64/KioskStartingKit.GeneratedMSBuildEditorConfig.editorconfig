@@ -1,5 +1,9 @@
 is_global = true
-build_property.TargetFramework = net9.0
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = 
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
 build_property.ProjectTypeGuids = 
@@ -11,5 +15,5 @@ build_property.RootNamespace = KioskStartingKit
 build_property.ProjectDir = /Users/fatihsayin/iCloud Drive (Archive)/Documents/kiosk-starting-pack/KioskStartingKit/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 

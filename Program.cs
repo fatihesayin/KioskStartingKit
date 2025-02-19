@@ -3,6 +3,18 @@ using System.Net;
 using System.Reflection;
 using Microsoft.Win32;
 
+bool runtimeInstalled = CheckAndInstallRuntime();
+if (!runtimeInstalled)
+{
+    Console.WriteLine("Runtime yüklü değil. Yükleniyor...");
+    runtimeInstalled = CheckAndInstallRuntime();
+    if (!runtimeInstalled)
+    {
+        Console.WriteLine("Runtime yüklenemedi. Lütfen tekrar deneyiniz.");
+        return;
+    }
+}
+
 if (IsChromeInstalled())
 {
     Console.WriteLine("Chrome zaten yüklü");
@@ -12,7 +24,8 @@ else
     Console.WriteLine("Google Chrome yüklü değil. Yükleniyor...");
     DownloadAndInstallChrome();
 }
-ExtractAndRun("Executables/Zadig.exe", "RunZadig.exe");
+Console.WriteLine("Zadig Yükleniyor...");
+DownloadAndInstallZadig();
 
 string subKey = @"SOFTWARE\Policies\Microsoft\Windows\EdgeUI";
 string keyName = "AllowEdgeSwipe";
@@ -21,6 +34,7 @@ Register(subKey, keyName, keyValue);
 subKey = @"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate";
 RegistryKey registryKey = GetOrCreateSubKey(subKey);
 Register(@"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU", "NoAutoUpdate", 1);
+Register(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize", "Startupdelayinmsec", 0);
 
 // metods
 static void ExtractAndRun(string resourceName, string outputFileName)
@@ -143,4 +157,86 @@ static void DownloadAndInstallChrome()
     process.WaitForExit();
 
     Console.WriteLine("Google Chrome yüklemesi tamamlandı.");
+}
+
+void DownloadAndInstallZadig()
+{
+    string zadigUrl = "https://github.com/pbatard/libwdi/releases/download/v1.5.1/zadig-2.9.exe";
+    string tempFilePath = Path.GetTempFileName() + ".exe";
+
+#pragma warning disable SYSLIB0014 // Type or member is obsolete
+    using (WebClient webClient = new())
+    {
+        webClient.DownloadFile(zadigUrl, tempFilePath);
+    }
+#pragma warning restore SYSLIB0014 // Type or member is obsolete
+
+    Process process = new();
+    process.StartInfo.FileName = tempFilePath;
+    process.StartInfo.UseShellExecute = true;
+    process.Start();
+    process.WaitForExit();
+
+    Console.WriteLine("Zadig yüklemesi tamamlandı.");
+}
+
+static bool CheckAndInstallRuntime()
+{
+    try
+    {
+        // .NET Runtime kontrolü
+        if (!IsRuntimeInstalled())
+        {
+            // Runtime kurulum dosyasını indir
+            string installerPath = DownloadRuntime();
+            
+            // Kurulumu başlat
+            ProcessStartInfo startInfo = new ProcessStartInfo
+            {
+                FileName = installerPath,
+                UseShellExecute = true,
+                Verb = "runas"
+            };
+            
+            Process process = new();
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+            return true;
+        }
+        return true;
+    }
+    catch
+    {
+        return false;
+    }
+}
+
+static bool IsRuntimeInstalled()
+{
+    try
+    {
+        // Registry'den .NET Runtime kontrolü
+        using (RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\dotnet\Setup\InstalledVersions\x64\sharedhost"))
+        {
+            return key != null;
+        }
+    }
+    catch
+    {
+        return false;
+    }
+}
+
+static string DownloadRuntime()
+{
+    string runtimeUrl = "https://download.visualstudio.microsoft.com/download/pr/b80c6fb6-65f7-4ae1-8a7b-d6c61c51c906/6401cf9d9c69f55096eb7e7b9eadff6a/windowsdesktop-runtime-8.0.3-win-x64.exe";
+    string tempFilePath = Path.GetTempFileName() + ".exe";
+
+    using (WebClient webClient = new())
+    {
+        webClient.DownloadFile(runtimeUrl, tempFilePath);
+    }
+
+    return tempFilePath;
 }

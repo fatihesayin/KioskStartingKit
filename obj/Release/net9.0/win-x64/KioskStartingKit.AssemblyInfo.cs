@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KioskStartingKit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42d4bed19d4e549e2262143772b6e7293327b0b0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b14536e9c298f67ac3325e3fd01db03276b7a101")]
 [assembly: System.Reflection.AssemblyProductAttribute("KioskStartingKit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KioskStartingKit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
